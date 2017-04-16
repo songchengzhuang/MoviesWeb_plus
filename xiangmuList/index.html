@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>宋先森的简历</title>
+
+    <!-- Bootstrap -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="css/moviecss/movieCss.css" rel="stylesheet">
+</head>
+
+<body>
+<!--
+   作者：1109726547@qq.com
+   时间：2017-03-19
+   描述：导航栏模块
+
+     -->
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav id="my_nav" class="navbar navbar-default navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1"><span
+                            class="sr-only">导航栏</span><span class="icon-bar"></span><span
+                            class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <a class="navbar-brand" href="/index">电影页</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="http://sczgodofwar.top/zuopin/shoppingCart/index.html">购物车</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/songchengzhuang/MoviesWeb.git">本站介绍</a>
+                        </li>
+                        <li class="active">
+                            <a href="http://sczgodofwar.top/">自我介绍</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" v-if="sessionUser.name!=''">
+                        <li>
+                            <a href="#">欢迎来到电影网：<span style="color: coral">{{sessionUser.name}}</span></a>
+                        </li>
+                        <li>
+                            <a href="/logout">退出登录</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" v-else>
+                        <li>
+                            <a href="/signin">登录</a>
+                        </li>
+                        <li>
+                            <a href="/signup">注册</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<!--
+    作者：1109726547@qq.com
+    时间：2017-03-19
+    描述：图片轮播模块
+        -->
+<div id="my_index" class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+
+            <div class="carousel slide" id="carousel-35405">
+                <ol class="carousel-indicators">
+                    <li data-slide-to="0" data-target="#carousel-35405">
+                    </li>
+                    <li data-slide-to="1" data-target="#carousel-35405" class="active">
+                    </li>
+                    <li data-slide-to="2" data-target="#carousel-35405">
+                    </li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item">
+                        <img alt="电影丢啦" src="/img/001.png"/>
+                        <div class="carousel-caption">
+                            <h4>
+                                复仇者联盟
+                            </h4>
+                            <p>
+                                主演：小罗伯特·唐尼/ 克里斯·埃文斯/ 克里斯·海姆斯
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item active">
+                        <img alt="电影丢啦" src="/img/002.jpg"/>
+                        <div class="carousel-caption">
+                            <h4>
+                                神话
+                            </h4>
+                            <p>
+                                主演：任泉/ 胡歌/ 白冰/ 金莎 / 李易祥/ 张世
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img alt="电影丢啦" src="/img/003.jpg"/>
+                        <div class="carousel-caption">
+                            <h4>
+                                蜀山战纪
+                            </h4>
+                            <p>
+                                主演：赵丽颖/ 陈伟霆/ 吴奇隆/ 叶祖新/ 刘思彤
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-35405" data-slide="prev"><span
+                        class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#carousel-35405" data-slide="next"><span
+                        class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+            <!--
+                作者：1109726547@qq.com
+                时间：2017-03-19
+                描述：本站介绍
+            -->
+            <div class="jumbotron">
+                <h1>
+                    本站声明
+                </h1>
+                <p>
+                    本站只用作求职项目，不用于任何商业活动。<strong>如有侵权行为，请联系我邮箱，网站会及时调整。</strong>谢谢！
+                </p>
+                <p>
+                    本站采用<strong>Bootstrap+Vue.js+Node.js+MongoDB</strong>响应式布局。<br>详情请看<strong>本站介绍</strong>。
+                </p>
+                <p>
+                    <a class="btn btn-primary btn-large" href="http://sczgodofwar.top/">联系我吧</a>
+                </p>
+            </div>
+        </div>
+        <!--
+            作者：1109726547@qq.com
+            时间：2017-03-19
+            描述：电影展示模块
+        -->
+        <div class="col-md-8 column">
+            <div class="row clearfix">
+                <template v-for="movie in filterMovies">
+                    <div class="col-md-4 col-sm-6 column filmImg">
+                        <a v-bind:href="/movie/+movie._id">
+                            <img :alt="movie.title" v-bind:src="movie.poster" class="img-rounded "/>
+                            <p>
+                                <strong>{{movie.title}}</strong>
+                            </p>
+                        </a>
+                    </div>
+                </template>
+                <div class="col-md-4 col-sm-6 column addImg">
+                    <a v-on:click="limitNum+=5"><img alt="加载更多" src="img/009.png" class="img-rounded"/></a>
+                </div>
+            </div>
+        </div>
+        <!--
+            作者：1109726547@qq.com
+            时间：2017-03-19
+            描述：电影排行模块
+        -->
+        <div class="col-md-4 column">
+            <ul>
+                <li class="text-center list-group-item list-group-item-success"><h4>电影列表</h4></li>
+                <template v-for="movie in filterMovies">
+                    <li class="text-center list-group-item list-group-item-danger">
+                        <a v-bind:href="/movie/+movie._id" v-text="movie.title"></a>
+                    </li>
+                    <li class="text-center list-group-item list-group-item-warning"></li>
+                </template>
+                <li class="text-center list-group-item list-group-item-danger">
+                    <a v-on:click="limitNum+=5"><strong>加载更多>></strong></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--
+        作者：1109726547@qq.com
+        时间：2017-03-19
+        描述：本站地址和备案号
+    -->
+    <div class="row clearfix">
+        <div class="col-md-12 column text-center">
+            <p>宋先森的简历&nbsp;&nbsp;&nbsp;&nbsp;备案号：鲁ICP备16048200号</p>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--vue.js-->
+<script src="//cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+<script src="/js/moviejs/indexVue.js"></script>
+<script src="/js/userjs/localuser.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>电影详情页</title>
+
+    <!-- Bootstrap -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav id="my_nav" class="navbar navbar-default navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1"><span
+                            class="sr-only">导航栏</span><span class="icon-bar"></span><span
+                            class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <a class="navbar-brand" href="/index">电影页</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="http://sczgodofwar.top/zuopin/shoppingCart/index.html">购物车</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/songchengzhuang/MoviesWeb.git">本站介绍</a>
+                        </li>
+                        <li class="active">
+                            <a href="http://sczgodofwar.top/">自我介绍</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" v-if="sessionUser.name!=''">
+                        <li>
+                            <a href="#">欢迎来到电影网:{{sessionUser.name}}</a>
+                        </li>
+                        <li>
+                            <a href="/logout">退出登录</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" v-else>
+                        <li>
+                            <a href="/signin">登录</a>
+                        </li>
+                        <li>
+                            <a href="/signup">注册</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<!--************电影详情 主体***************-->
+<div id="my_movie" class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <h3>
+                {{movie.title}}
+                <small>观看量：{{movie.visitors}}</small>
+            </h3>
+        </div>
+    </div>
+    <!--视频播放插件-->
+    <div class="row clearfix">
+        <div class="col-md-8 column" v-if="filmshow">
+            <object width='720' height='600'>
+                <param name='allowFullScreen' value='true'/>
+                <param name='movie' v-bind:value='movie.flash'/>
+                <embed v-bind:src='movie.flash' width='720' height='600'
+                       allowFullScreen='true' type='application/x-shockwave-flash'/>
+            </object>
+        </div>
+        <div class="col-md-4 column">
+            <dl class="dl-horizontal">
+                <dt>
+                    电影名字：
+                </dt>
+                <dd>
+                    {{movie.title}}
+                </dd>
+                <dt>
+                    导&nbsp;&nbsp;&nbsp;&nbsp;演：
+                </dt>
+                <dd>
+                    {{movie.doctor}}
+                </dd>
+                <dt>
+                    国&nbsp;&nbsp;&nbsp;&nbsp;家：
+                </dt>
+                <dd>
+                    {{movie.country}}
+                </dd>
+                <dt>
+                    语&nbsp;&nbsp;&nbsp;&nbsp;言：
+                </dt>
+                <dd>
+                    {{movie.language}}
+                </dd>
+                <dt>
+                    上映年份：
+                </dt>
+                <dd>
+                    {{movie.year}}
+                </dd>
+            </dl>
+            <div class="text-center">
+                <h4>电影海报</h4>
+                <img v-bind:src="movie.poster"/>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <h4>电影简介：</h4>
+            <p>
+                {{movie.summary}}
+            </p>
+        </div>
+    </div>
+</div>
+<!--
+        作者：1109726547@qq.com
+        时间：2017-03-19
+        描述：本站地址和备案号
+    -->
+<div class="row clearfix">
+    <div class="col-md-12 column text-center">
+        <address>宋先森的简历&nbsp;&nbsp;&nbsp;&nbsp;备案号：鲁ICP备16048200号</address>
+    </div>
+</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--vue.js-->
+<script src="//cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+<script src="/js/moviejs/movieDetailVue.js"></script>
+<script src="/js/userjs/localuser.js"></script>
+
+</body>
+
+</html>

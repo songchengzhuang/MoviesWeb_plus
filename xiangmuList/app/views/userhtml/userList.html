@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>用户列表页</title>
+
+    <!-- Bootstrap -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!--
+   作者：1109726547@qq.com
+   时间：2017-03-19
+   描述：导航栏模块
+
+     -->
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav id="my_nav" class="navbar navbar-default navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/index">电影页</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/sigup">3秒钟完成注册</a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right" v-if="sessionUser.name!=''">
+                        <li>
+                            <a href="#">欢迎来到电影网:{{sessionUser.name}}</a>
+                        </li>
+                        <li>
+                            <a href="/logout">退出登录</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right" v-else>
+                        <li>
+                            <a href="/signin">登录</a>
+                        </li>
+                        <li>
+                            <a href="/signup">注册</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!---->
+<div id="user_list" class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <h3>
+                用户列表页
+            </h3>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th style="display:none">
+                        ID
+                    </th>
+                    <th>
+                        编号
+                    </th>
+                    <th>
+                        用户名称
+                    </th>
+                    <th>
+                        用户年龄
+                    </th>
+                    <th>
+                        用户权限
+                    </th>
+                    <th>
+                        注册时间
+                    </th>
+                    <th>
+                        查看
+                    </th>
+                    <th>
+                        更新
+                    </th>
+                    <th>
+                        删除
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="( user , index ) in userList">
+                    <td style="display:none">
+                        {{user._id}}
+                    </td>
+                    <td>
+                        {{index+1}}
+                    </td>
+                    <td>
+                        {{user.name}}
+                    </td>
+                    <td>
+                        {{user.age}}
+                    </td>
+                    <td>
+                        {{user.role}}
+                    </td>
+                    <td>
+                        {{moment(user.mate.updateAt).format('YYYY年MM月DD日HH:mm:ss')}}
+                    </td>
+                    <td>
+                        <a role="button" class="btn" target='_blank' v-bind:href="'/user/detail/'+user._id">查看</a>
+                    </td>
+                    <td>
+                        <a role="button" class="btn" target='_blank' v-bind:href="'/user/update/'+user._id">修改</a>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger btn-xs del" onclick="userdel()">删除</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//lib.baomitu.com/moment.js/2.18.1/moment.min.js"></script>
+<!--vue.js-->
+<script src="//cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+
+<script src="/js/userjs/userList.js"></script>
+<script src="/js/userjs/userDelete.js"></script>
+<script src="/js/userjs/localuser.js"></script>
+</body>
+
+</html>

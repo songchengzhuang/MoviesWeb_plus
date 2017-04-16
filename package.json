@@ -1,0 +1,27 @@
+{
+  "name": "movie_web",
+  "version": "0.0.1",
+  "description": "node.js(express)",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.1",
+    "cookie-session": "^2.0.0-beta.1",
+    "express": "^4.15.2",
+    "js-md5": "^0.4.2",
+    "moment": "^2.18.1",
+    "morgan": "^1.8.1",
+    "mongoose": "^4.9.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "songchengzhuang",
+  "license": "ISC"
+}

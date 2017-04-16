@@ -1,0 +1,16 @@
+/*电影 下外边距5个 相对高度*/
+.filmImg, .addImg {
+    margin-bottom: 5em;
+}
+/* 透明图效果*/
+.filmImg:hover {
+    opacity: 0.85;
+}
+
+.addImg {
+    opacity: 0.6;
+}
+
+.addImg:hover {
+    opacity: 1.0;
+}

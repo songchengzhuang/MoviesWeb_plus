@@ -1,0 +1,21 @@
+{
+  "name": "MovieWeb",
+  "authors": [
+    "songchengzhuang"
+  ],
+  "description": "bootstrap+node.js(express)+mongodb",
+  "main": "imdex.html",
+  "keywords": [
+    "movie"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
