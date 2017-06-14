@@ -1,5 +1,6 @@
 # MoviesWeb_plus
-此项目需要 电脑上 安装有 node+MongoDB数据库
+此项目需要 电脑上 安装有 node+MongoDB数据库。
+
 app.js启动node服务器。
 # 该项目是MoviesWeb的升级版，在原有的基础上，进行了优化了项目目录 和代码。
 1.加了用户的登录注册
