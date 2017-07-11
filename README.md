@@ -36,10 +36,10 @@ app.js启动node服务器。
 因为注册用户的权限默认为0，权限大于10（不包括10）才能访问 后台页面。
 所以，大家可以把config目录下的routes.js中的
 app.get("/user/list", User.signinRequired, User.adminRequired, User.userlist);//列表 页，
-app.get('/user/update/:id', User.signinRequired, User.adminRequired, User.userupdate);//用户更新页
+app.post("/admin/update", User.signinRequired, User.adminRequired, User.userUpdate);//更新 数据处理
 ----改成
 app.get("/user/list", User.userlist);//列表 页
-app.get('/user/update/:id', User.userupdate);//用户更新页。
+app.post("/admin/update", User.adminRequired, User.userUpdate);//更新 数据处理
 （去掉中间件），运行，进入localhost:3000/user/list，进行 权限修改（>10）,然后复原代码。
 
 欢迎大家的下载和修改。
