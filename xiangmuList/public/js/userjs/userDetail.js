@@ -33,7 +33,7 @@ new Vue({
             var url = window.location.href;//获取当前页面的 地址栏url
             var id = url.substring(url.lastIndexOf('/') + 1);//用substring找到url最后一个'/'的位置,substring取+1 位置 到url字符串末尾 的 值
 
-            if (id !== 'undefined') {
+            if (id != 'undefined') {
                 $.ajax({
                     type: 'POST',
                     url: '/admin/changdetail',
