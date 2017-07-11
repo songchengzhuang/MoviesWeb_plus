@@ -15,7 +15,9 @@ var bodyParser = require('body-parser');//需要载入body-parser中间件才可
 var port = process.env.PORT || 3000; //设置端口号3000
 var app = express(); //启动一个web服务器
 
-mongoose.connect('mongodb://localhost/films');//在本地mongodb数据库创建films库
+//这里版本更新 改成createconnect。
+mongoose.createconnect('mongodb://localhost/films');//在本地mongodb数据库创建films库
+//mongoose.connect('mongodb://localhost/films');//在本地mongodb数据库创建films库
 
 //app.set('views','../../views');
 //app.set('views',path.join(__dirname +'./views'));//设置默认视图路径。
