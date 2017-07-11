@@ -123,7 +123,7 @@ exports.userUpdate = function (req, res, next) {
     var _user;
 
     //更新user
-    if (id !== 'undefined') {
+    if (id != 'undefined') {
         User.findById(id, function (err, user) {
             if (err) {
                 console.log(err)
