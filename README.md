@@ -43,3 +43,5 @@ app.post("/admin/update", User.adminRequired, User.userUpdate);//更新 数据�
 （去掉中间件），运行，进入localhost:3000/user/list，进行 权限修改（>10）,然后复原代码。
 
 欢迎大家的下载和修改。
+
+升级版 1．用Bootstrap搭建响应式布局页面。运用$.ajax()异步获取Node后台json数据。 使用Vue.js实现页面渲染以及数据的双向绑定和实时计算。 2．通过Node.js+MongoDB实现了电影和用户的增删改查及权限管理。 密码使用MD5加盐处理，用户登录会话做了持久化处理。 收获：解决了IE兼容问题，以及收获了前后端数据的交互和联系。 通过全栈思维引导，拓宽了我对技能的理解，加深了我对整体项目全局观念。
